@@ -1,0 +1,30 @@
+{
+  "agents": {
+    "defaults": {
+      "memorySearch": {
+        "chunking": {
+          "tokens": 250,
+          "overlap": 60
+        },
+        "query": {
+          "maxResults": 10,
+          "minScore": 0.15,
+          "hybrid": {
+            "enabled": true,
+            "vectorWeight": 0.75,
+            "textWeight": 0.25,
+            "candidateMultiplier": 8,
+            "mmr": {
+              "enabled": true,
+              "lambda": 0.7
+            },
+            "temporalDecay": {
+              "enabled": true,
+              "halfLifeDays": 90
+            }
+          }
+        }
+      }
+    }
+  }
+}

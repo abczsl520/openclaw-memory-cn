@@ -1,0 +1,18 @@
+{
+  "name": "weekly-memory-maintenance",
+  "schedule": {
+    "kind": "cron",
+    "expr": "0 3 * * 0",
+    "tz": "Asia/Shanghai"
+  },
+  "sessionTarget": "isolated",
+  "payload": {
+    "kind": "agentTurn",
+    "message": "执行每周记忆维护任务：\n\n1. 压缩旧日志：扫描 memory/ 下超过 7 天且 >8KB 的日志文件，用 Python 压缩到 <5KB，原文备份到 archive/\n2. 清理旧 archive：删除 archive/ 中超过 30 天的备份文件\n3. 检查新项目文件：如有文件缺少 tags 标签，自动添加\n4. 重建索引：openclaw memory index --force\n\n完成后汇报处理了哪些文件。",
+    "timeoutSeconds": 300
+  },
+  "delivery": {
+    "mode": "announce"
+  },
+  "enabled": true
+}
