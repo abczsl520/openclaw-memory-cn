@@ -45,7 +45,7 @@ SELECT COUNT(*) FROM chunks_fts('text') WHERE text LIKE '%立项%';
 
 ```
 "用户，你好" → "用户" + "你好" (2个token，逗号分隔)
-"Telegram: @dev" → 正常分词
+"Telegram: @example_user" → 正常分词
 ```
 
 ## OpenClaw 的修复状态
