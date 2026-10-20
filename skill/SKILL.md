@@ -103,7 +103,7 @@ openclaw memory index --force
 
 ### FTS5 unicode61 Bug
 - `unicode61` 分词器把连续 CJK 字符当作一个 token
-- 搜索 "立项" 无法匹配 "项目组刚立项"（因为后者是一个 token）
+- 搜索 "立项" 无法匹配 "项目刚立项"（因为后者是一个 token）
 - Workaround：中文关键词之间加空格 → FTS5 正确分词
 
 ### 0.6B 模型参数调优

@@ -16,7 +16,7 @@ OpenClaw 使用 SQLite FTS5 全文搜索作为混合搜索的文本分支。FTS5
 ```sql
 -- 查看 FTS5 实际索引的 token
 SELECT term, doc FROM chunks_fts_vocab WHERE col = '*' AND term LIKE '%立项%';
--- 结果: "用户项目组刚立项" — 整段话是1个token！
+-- 结果: "用户项目刚立项" — 整段话是1个token！
 
 -- 精确匹配：失败
 SELECT COUNT(*) FROM chunks_fts WHERE chunks_fts MATCH '立项';
@@ -37,7 +37,7 @@ SELECT COUNT(*) FROM chunks_fts('text') WHERE text LIKE '%立项%';
 
 ```
 "确定华南区研发中心三楼会议室" → 1个token (15个字符)
-"也叫小王"                 → 1个token (5个字符)
+"也叫小王吧"                 → 1个token (5个字符)
 "抖音星图达人"               → 1个token (6个字符)
 ```
 
@@ -61,7 +61,7 @@ SELECT COUNT(*) FROM chunks_fts('text') WHERE text LIKE '%立项%';
 在中文关键词之间加空格，让 `unicode61` 把它们索引为独立 token：
 
 ```markdown
-❌ 项目组刚立项，选定广东省研发中心
+❌ 项目刚立项，选定广东省研发中心
 ✅ 项目组 刚立项，选定 广东省 研发中心
 ```
 

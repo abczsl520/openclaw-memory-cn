@@ -29,7 +29,7 @@ You: I LITERALLY TOLD YOU LAST WEEK!
 
 **It's not your fault. It's an SQLite FTS5 tokenization bug.**
 
-FTS5's `unicode61` tokenizer treats consecutive CJK characters as a **single token**. So `项目组刚立项选定广东省研发中心` (13 characters about pregnancy + hospital) becomes ONE token. Searching for `立项` (pregnancy)? No match.
+FTS5's `unicode61` tokenizer treats consecutive CJK characters as a **single token**. So `项目刚立项确定华南区研发中心` (13 characters about pregnancy + hospital) becomes ONE token. Searching for `立项` (pregnancy)? No match.
 
 This project fixes it with **pure configuration** — zero code changes.
 

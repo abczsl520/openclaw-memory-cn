@@ -10,7 +10,7 @@ sqlite3 ~/.openclaw/memory/main.sqlite \
   "SELECT term FROM chunks_fts_vocab WHERE col='*' AND length(term) > 8 LIMIT 20;"
 ```
 
-如果看到超长的中文字符串（如 `项目组刚立项选定广东省`），说明 unicode61 bug 影响了你。
+如果看到超长的中文字符串（如 `项目刚立项选定广东省`），说明 unicode61 bug 影响了你。
 
 ### Step 2：测试搜索质量
 
